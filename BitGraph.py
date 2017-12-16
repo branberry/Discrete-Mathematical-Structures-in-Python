@@ -7,13 +7,16 @@ class BitGraph:
     def getSize(self):
         return self.size
 
-    def generateGraph(self):
-        if self.size <= 0:
-            print("graph is too small")
+    def generate(self,start,end):
+        if end == start:
+            return
+        else:
+            self.graph.append(0)
+            return generate(start+1,end)
 
 
 
 
-
-b = BitGraph(0)
-b.generateGraph()
+b = BitGraph(4)
+b.generate(0,b.size)
+print(b.graph)
